@@ -1,0 +1,166 @@
+/* ===========================
+   Design Tokens
+   =========================== */
+:root {
+  --bg:        #09090b;
+  --surface-1: #0f1014;
+  --surface-2: #151619;
+  --surface-3: #1a1b20;
+
+  --border:       rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.14);
+
+  --text-1: #ededef;
+  --text-2: #84858d;
+  --text-3: #4e4f56;
+
+  --blue:   #5b8def;
+  --purple: #8b6cf6;
+  --green:  #34d399;
+
+  --glow-blue:   rgba(91, 141, 239, 0.08);
+  --glow-purple: rgba(139, 108, 246, 0.04);
+
+  --navbar-bg:      rgba(9, 9, 11, 0.85);
+  --shadow-card:    rgba(0, 0, 0, 0.3);
+  --shadow-heavy:   rgba(0, 0, 0, 0.25);
+  --accent-blue-bg:   rgba(91, 141, 239, 0.08);
+  --accent-blue-bdr:  rgba(91, 141, 239, 0.12);
+  --accent-purple-bg: rgba(139, 108, 246, 0.07);
+  --accent-purple-bdr: rgba(139, 108, 246, 0.2);
+  --accent-green-bg:  rgba(52, 211, 153, 0.04);
+  --accent-green-bdr: rgba(52, 211, 153, 0.1);
+
+  --font-body:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  --page-px: clamp(1.25rem, 5vw, 4rem);
+  --max-w:   1100px;
+}
+
+[data-theme="light"] {
+  --bg:        #f8fafc;
+  --surface-1: #ffffff;
+  --surface-2: #f1f5f9;
+  --surface-3: #e2e8f0;
+
+  --border:       rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.18);
+
+  --text-1: #0f172a;
+  --text-2: #475569;
+  --text-3: #94a3b8;
+
+  --blue:   #3b82f6;
+  --purple: #7c3aed;
+  --green:  #10b981;
+
+  --glow-blue:   rgba(59, 130, 246, 0.12);
+  --glow-purple: rgba(124, 58, 237, 0.08);
+
+  --navbar-bg:      rgba(255, 255, 255, 0.85);
+  --shadow-card:    rgba(0, 0, 0, 0.06);
+  --shadow-heavy:   rgba(0, 0, 0, 0.08);
+  --accent-blue-bg:   rgba(59, 130, 246, 0.08);
+  --accent-blue-bdr:  rgba(59, 130, 246, 0.15);
+  --accent-purple-bg: rgba(124, 58, 237, 0.06);
+  --accent-purple-bdr: rgba(124, 58, 237, 0.15);
+  --accent-green-bg:  rgba(16, 185, 129, 0.06);
+  --accent-green-bdr: rgba(16, 185, 129, 0.12);
+}
+
+/* ===========================
+   Reset
+   =========================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+/* ===========================
+   Shared
+   =========================== */
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--page-px);
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+.btn-fill,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-fill {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  color: #fff;
+}
+
+.btn-fill:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+  color: var(--text-1);
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+}
+
+/* ===========================
+   Section dividers
+   =========================== */
+.section-sep {
+  height: 1px;
+  background: var(--border);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}

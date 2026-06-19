@@ -55,7 +55,7 @@ func main() {
 		if err != nil {
 			serverHost = *serverAddr
 		}
-		publicURL := fmt.Sprintf("http://%s.%s", sub, serverHost)
+		publicURL := fmt.Sprintf("https://%s.%s", sub, serverHost)
 
 		content := lipgloss.JoinVertical(
 			lipgloss.Left,

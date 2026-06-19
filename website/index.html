@@ -1,100 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>phasethru - Fast & Lightweight Reverse Tunneling</title>
-    <meta name="description" content="An open-source, ultra-lightweight alternative to ngrok for bypassing restrictive firewalls and CGNAT via secure outbound reverse tunneling.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">
-            <span class="logo-icon"></span>
-            phasethru
-        </div>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#installation">Installation</a>
-            <a href="https://github.com/Sahas001/phasethru" target="_blank" class="btn btn-outline">GitHub</a>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <div class="badge">v1.0.0 is live</div>
-            <h1>The lightweight way to <span class="gradient-text">expose locals</span> to the world.</h1>
-            <p>Bypass restrictive consumer firewalls and CGNAT. Written entirely in Go with zero heavy dependencies.</p>
-            
-            <div class="cta-group">
-                <a href="#installation" class="btn btn-primary">Get Started</a>
-                <a href="https://github.com/Sahas001/phasethru" target="_blank" class="btn btn-secondary">View Source</a>
-            </div>
-        </div>
-        
-        <div class="hero-visual">
-            <div class="terminal-window glow">
-                <div class="terminal-header">
-                    <span class="dot close"></span>
-                    <span class="dot minimize"></span>
-                    <span class="dot maximize"></span>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-line"><span class="prompt">~</span> phasethru http 8080</div>
-                    <div class="terminal-line output success">Connecting to phasethru.dev:443... Done!</div>
-                    <div class="terminal-line output">Session ID:   usr_98a7b6c5d4</div>
-                    <div class="terminal-line output">Forwarding:   https://myapp.phasethru.dev -> localhost:8080</div>
-                    <div class="terminal-line output"></div>
-                    <div class="terminal-line output info">Waiting for connections...</div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="features" class="features">
-        <h2 class="section-title">Why phasethru?</h2>
-        <div class="feature-grid">
-            <div class="feature-card glass">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);">🚀</div>
-                <h3>Blazing Fast</h3>
-                <p>Built with Go's legendary concurrency model and Yamux multiplexing for near-zero latency overhead.</p>
-            </div>
-            <div class="feature-card glass">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🛡️</div>
-                <h3>Firewall Friendly</h3>
-                <p>Establishes pure outbound TCP connections to completely bypass NAT, CGNAT, and restrictive corporate firewalls.</p>
-            </div>
-            <div class="feature-card glass">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🪶</div>
-                <h3>Ultra Lightweight</h3>
-                <p>Zero external heavy framework dependencies. Designed to run smoothly on low-spec developer hardware and IoT devices.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="installation" class="installation">
-        <div class="glass-panel">
-            <h2 class="section-title">Quick Installation</h2>
-            <div class="code-block-wrapper">
-                <pre><code class="language-bash"># Install using Go
-go install github.com/Sahas001/phasethru/cmd/phasethru@latest
-
-# Start tunneling your local port 3000
-phasethru http 3000</code></pre>
-                <button class="copy-btn" id="copyBtn">Copy</button>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 phasethru contributors. Open Source under MIT License.</p>
-    </footer>
-
-    <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/phasethru_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PhaseThru — Expose local services to the internet through secure reverse tunnels. Bypass NAT and CGNAT with a single Go binary." />
+    <title>PhaseThru — Secure Reverse Tunneling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&family=Oxanium:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
